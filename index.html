@@ -12,6 +12,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!--Scripts{START}-->
 
+<script>
+var sum = 0;
+    function add() {
+        sum += 1;
+        document.getElementById("sum").innerHTML = sum;
+    };
+	</script>
+
 <link rel="stylesheet" type="text/css" href="css.css">
 <link rel="stylesheet" type="text/css" href="main.css">
 
@@ -49,6 +57,9 @@ Buttons{END}-->
 <div class="title">
 Tameio g2
 </div>
+
+<button onclick="add()" >+1</button>
+<div id="sum"></div>
 
 <div class="balance" id="result">
 <font color="white">
