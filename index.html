@@ -1,3 +1,374 @@
-<body>
-hi
+<!DOCTYPE html>
+<html>
+<head>
+<!--Scripts{START}-->
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="reset.js"></script>
+<script type="text/javascript" src="bg-an.js"></script>
+<script type="text/javascript" src="mines.js"></script>
+<script type="text/javascript" src="praksis.js"></script>
+<script type="text/javascript" src="log.js"></script>
+<!--<script type="text/javascript" src="+1_Min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!--Scripts{START}-->
+
+<link rel="stylesheet" type="text/css" href="css.css">
+<link rel="stylesheet" type="text/css" href="main.css">
+
+
+</head> 
+<body background="bg.jpg"  onload="clickvarMinesKaramaroudi(), clickvarMinesKarlis(), clickvarMinesKarnesi(), clickvarMinesKatsanaki(), clickvarMinesKoufopoulos(), clickvarMinesKirimis(), clickvarMinesLiarou(), clickvarMinesLiontou(), clickvarMinesLountzi(), clickvarMinesMakra(), clickvarMinesMamali(), clickvarMinesMamantzi(), clickvarMinesManolakos(), clickvarMinesMatsa(), clickvarMinesMpaltsavia(), clickvarMinesMparmpari(), clickvarMinesMpelaouri(), clickvarMinesMpoutsikaki(), clickvarMinesMoisidou(), clickvarMinesNitsas(), clickvarMinesNteves(), clickvarMinesXarisis(), loadAnthroismaBal()" >
+<div id="bg" class="animated zoomIn">
+<canvas id="bg-an"></canvas>
+</div>
+
+
+<!--Buttons{START}    OUTDATED
+<p><button onclick="clickLoader()" type="button">Load</button></p>
+<p><button onclick="clickCounter()" type="button">+1</button>
+<button onclick="clickCounter_2()" type="button">+2</button></p>
+<p><button onclick="clickCounter_3()" type="button">+3</button>
+<button onclick="clickCounter_4()" type="button">+4</button></p>
+<p><button onclick="clickCounter_5()" type="button">+5</button></p>
+Buttons{END}            OUTDATED                       -->   
+
+
+
+
+<!--Buttons{START}
+<p>
+<a href="#" onclick="clickCounter()" class="myButton" >+1</a>
+<a href="#" onclick="clickCounter_2()" class="myButton" >+2</a></p>
+<p><a href="#" onclick="clickCounter_3()" class="myButton" >+3</a>
+<a href="#" onclick="clickCounter_4()" class="myButton" >+4</a></p>
+<a href="#" onclick="clickCounter_5()" class="myButton" >+5</a>
+<a href="#" onclick="clickCounter_22()" class="myButton" >+22</a>
+<a href="#" onclick="clickReset()" class="myButton" >Reset</a>
+Buttons{END}-->
+
+<div class="title">
+Tameio g2
+</div>
+
+<div class="balance" id="result">
+<font color="white">
+Balance: UNLOADED
+</font>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div class="accordion FastBoard">
+    <ul>
+        <li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="1">
+                <span>Karamaroudi Maria Gesthimani</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#1" onclick="clickvarMinesKaramaroudi_1(), clickvarMinesKaramaroudi(), logAction()" class="myButton" >+1</a>
+				<a href="#1" onclick="clickvarMinesKaramaroudi_2(), clickvarMinesKaramaroudi()" class="myButton" >+2</a>
+				<a href="#1" onclick="clickvarMinesKaramaroudiReset()" class="myButton" >Reset</a>
+						<div id="varMinesKaramaroudi"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+        <li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="2">
+                <span>Karlis Anastasios</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#2" onclick="clickvarMinesKarlis_1(), clickvarMinesKarlis()" class="myButton" >+1</a>
+				<a href="#2" onclick="clickvarMinesKarlis_2(), clickvarMinesKarlis()" class="myButton" >+2</a>
+				<a href="#2" onclick="clickvarMinesKarlisReset()" class="myButton" >Reset</a>
+						<div id="varMinesKarlis"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="3">
+                <span>Karnesi Georgia</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#3" onclick="clickvarMinesKarnesi_1(), clickvarMinesKarnesi()" class="myButton" >+1</a>
+				<a href="#3" onclick="clickvarMinesKarnesi_2(), clickvarMinesKarnesi()" class="myButton" >+2</a>
+				<a href="#3" onclick="clickvarMinesKarnesiReset()" class="myButton" >Reset</a>
+						<div id="varMinesKarnesi"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="4">
+                <span>Katsanaki Vasiliki</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#4" onclick="clickvarMinesKatsanaki_1(), clickvarMinesKatsanaki()" class="myButton" >+1</a>
+				<a href="#4" onclick="clickvarMinesKatsanaki_2(), clickvarMinesKatsanaki()" class="myButton" >+2</a>
+				<a href="#4" onclick="clickvarMinesKatsanakiReset()" class="myButton" >Reset</a>
+						<div id="varMinesKatsanaki"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="5">
+                <span>Koufopoulos Konstantinos</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#5" onclick="clickvarMinesKoufopoulos_1(), clickvarMinesKoufopoulos()" class="myButton" >+1</a>
+				<a href="#5" onclick="clickvarMinesKoufopoulos_2(), clickvarMinesKoufopoulos()" class="myButton" >+2</a>
+				<a href="#5" onclick="clickvarMinesKoufopoulosReset()" class="myButton" >Reset</a>
+						<div id="varMinesKoufopoulos"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="6">
+                <span>Kirimis Ermis</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#6" onclick="clickvarMinesKirimis_1(), clickvarMinesKirimis()" class="myButton" >+1</a>
+				<a href="#6" onclick="clickvarMinesKirimis_2(), clickvarMinesKirimis()" class="myButton" >+2</a>
+				<a href="#6" onclick="clickvarMinesKirimisReset()" class="myButton" >Reset</a>
+						<div id="varMinesKirimis"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="7">
+                <span>Liarou Eleni</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#7" onclick="clickvarMinesLiarou_1(), clickvarMinesLiarou()" class="myButton" >+1</a>
+				<a href="#7" onclick="clickvarMinesLiarou_2(), clickvarMinesLiarou()" class="myButton" >+2</a>
+				<a href="#7" onclick="clickvarMinesLiarouReset()" class="myButton" >Reset</a>
+						<div id="varMinesLiarou"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="8">
+                <span>Liontou Anna</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#8" onclick="clickvarMinesLiontou_1(), clickvarMinesLiontou()" class="myButton" >+1</a>
+				<a href="#8" onclick="clickvarMinesLiontou_2(), clickvarMinesLiontou()" class="myButton" >+2</a>
+				<a href="#8" onclick="clickvarMinesLiontouReset()" class="myButton" >Reset</a>
+						<div id="varMinesLiontou"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="9">
+                <span>Lountzi Vasiliki</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#9" onclick="clickvarMinesLountzi_1(), clickvarMinesLountzi()" class="myButton" >+1</a>
+				<a href="#9" onclick="clickvarMinesLountzi_2(), clickvarMinesLountzi()" class="myButton" >+2</a>
+				<a href="#9" onclick="clickvarMinesLountziReset()" class="myButton" >Reset</a>
+						<div id="varMinesLountzi"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="10">
+                <span>Makra Bana</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#10" onclick="clickvarMinesMakra_1(), clickvarMinesMakra()" class="myButton" >+1</a>
+				<a href="#10" onclick="clickvarMinesMakra_2(), clickvarMinesMakra()" class="myButton" >+2</a>
+				<a href="#10" onclick="clickvarMinesMakraReset()" class="myButton" >Reset</a>
+						<div id="varMinesMakra"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="11">
+                <span>Mamali Mirto</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#11" onclick="clickvarMinesMamali_1(), clickvarMinesMamali()" class="myButton" >+1</a>
+				<a href="#11" onclick="clickvarMinesMamali_2(), clickvarMinesMamali()" class="myButton" >+2</a>
+				<a href="#11" onclick="clickvarMinesMamaliReset()" class="myButton" >Reset</a>
+						<div id="varMinesMamali"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="12">
+                <span>Mamantzi Xristina</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#12" onclick="clickvarMinesMamantzi_1(), clickvarMinesMamantzi()" class="myButton" >+1</a>
+				<a href="#12" onclick="clickvarMinesMamantzi_2(), clickvarMinesMamantzi()" class="myButton" >+2</a>
+				<a href="#12" onclick="clickvarMinesMamantziReset()" class="myButton" >Reset</a>
+						<div id="varMinesMamantzi"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="13">
+                <span>Manolakos Xristos</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#13" onclick="clickvarMinesManolakos_1(), clickvarMinesManolakos()" class="myButton" >+1</a>
+				<a href="#13" onclick="clickvarMinesManolakos_2(), clickvarMinesManolakos()" class="myButton" >+2</a>
+				<a href="#13" onclick="clickvarMinesManolakosReset()" class="myButton" >Reset</a>
+						<div id="varMinesManolakos"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="14">
+                <span>Matsa Anna-Marina</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#14" onclick="clickvarMinesMatsa_1(), clickvarMinesMatsa()" class="myButton" >+1</a>
+				<a href="#14" onclick="clickvarMinesMatsa_2(), clickvarMinesMatsa()" class="myButton" >+2</a>
+				<a href="#14" onclick="clickvarMinesMatsaReset()" class="myButton" >Reset</a>
+						<div id="varMinesMatsa"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="15">
+                <span>Mpaltsavia Artemis</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#15" onclick="clickvarMinesMpaltsavia_1(), clickvarMinesMpaltsavia()" class="myButton" >+1</a>
+				<a href="#15" onclick="clickvarMinesMpaltsavia_2(), clickvarMinesMpaltsavia()" class="myButton" >+2</a>
+				<a href="#15" onclick="clickvarMinesMpaltsaviaReset()" class="myButton" >Reset</a>
+						<div id="varMinesMpaltsavia"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="16">
+                <span>Mparmpari Athanasia</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#16" onclick="clickvarMinesMparmpari_1(), clickvarMinesMparmpari()" class="myButton" >+1</a>
+				<a href="#16" onclick="clickvarMinesMparmpari_2(), clickvarMinesMparmpari()" class="myButton" >+2</a>
+				<a href="#16" onclick="clickvarMinesMparmpariReset()" class="myButton" >Reset</a>
+						<div id="varMinesMparmpari"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="17">
+                <span>Mpelaouri Lidia</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#17" onclick="clickvarMinesMpelaouri_1(), clickvarMinesMpelaouri()" class="myButton" >+1</a>
+				<a href="#17" onclick="clickvarMinesMpelaouri_2(), clickvarMinesMpelaouri()" class="myButton" >+2</a>
+				<a href="#17" onclick="clickvarMinesMpelaouriReset()" class="myButton" >Reset</a>
+						<div id="varMinesMpelaouri"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="18">
+                <span>Mpoutsikaki Nora</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#18" onclick="clickvarMinesMpoutsikaki_1(), clickvarMinesMpoutsikaki()" class="myButton" >+1</a>
+				<a href="#18" onclick="clickvarMinesMpoutsikaki_2(), clickvarMinesMpoutsikaki()" class="myButton" >+2</a>
+				<a href="#18" onclick="clickvarMinesMpoutsikakiReset()" class="myButton" >Reset</a>
+						<div id="varMinesMpoutsikaki"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="19">
+                <span>Moisidou Antonia</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#9" onclick="clickvarMinesMoisidou_1(), clickvarMinesMoisidou()" class="myButton" >+1</a>
+				<a href="#19" onclick="clickvarMinesMoisidou_2(), clickvarMinesMoisidou()" class="myButton" >+2</a>
+				<a href="#19" onclick="clickvarMinesMoisidouReset()" class="myButton" >Reset</a>
+						<div id="varMinesMoisidou"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="20">
+                <span>Nitsas Thiseas</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#20" onclick="clickvarMinesNitsas_1(), clickvarMinesNitsas()" class="myButton" >+1</a>
+				<a href="#20" onclick="clickvarMinesNitsas_2(), clickvarMinesNitsas()" class="myButton" >+2</a>
+				<a href="#20" onclick="clickvarMinesNitsasReset()" class="myButton" >Reset</a>
+						<div id="varMinesNitsas"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="21">
+                <span>Nteves Giorgos</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#21" onclick="clickvarMinesNteves_1(), clickvarMinesNteves()" class="myButton" >+1</a>
+				<a href="#21" onclick="clickvarMinesNteves_2(), clickvarMinesNteves()" class="myButton" >+2</a>
+				<a href="#21" onclick="clickvarMinesNtevesReset()" class="myButton" >Reset</a>
+						<div id="varMinesNteves"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+		
+		<li>
+            <input type="radio" name="select" class="accordion-select" checked />
+            <div class="accordion-title" id="22">
+                <span>Xarisis Aleksis</span>
+            </div>
+            <div class="accordion-content">
+				<a href="#22" onclick="clickvarMinesXarisis_1(), clickvarMinesXarisis()" class="myButton" >+1</a>
+				<a href="#22" onclick="clickvarMinesXarisis_2(), clickvarMinesXarisis()" class="myButton" >+2</a>
+				<a href="#22" onclick="clickvarMinesXarisisReset()" class="myButton" >Reset</a>
+						<div id="varMinesXarisis"></div>
+			</div>
+            <div class="accordion-separator"></div>
+        </li>
+    </ul>
+</div>
+</div>
 </body>
+</html>
